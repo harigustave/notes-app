@@ -1,8 +1,6 @@
 const chalk=require('chalk');
-const yargs=require('yargs');
-const getNotes=require('./notes');
-
-const notes=[];
+const yargs=require('yargs')
+const notes=require('./notes.js');
 
 // Add note
 yargs.command({
@@ -16,15 +14,13 @@ yargs.command({
         },
 
         body:{
-            describe:'Note bbody',
+            describe:'Note body',
             demandOption:true,
             type:'string'
         }
     },
     handler:function(argv){
-        console.log('Adding a new note...')
-        console.log('Title:'+argv.title)
-        console.log('Body:'+argv.body)
+        notes.addNote(argv.title, argv.body)
     }
 })
 
