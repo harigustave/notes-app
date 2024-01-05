@@ -7,8 +7,8 @@ const getNotes = ()=>{
 
 const addNote=(title,body)=>{
     const notes=loadNotes()
-    const duplicateNotes= notes.filter((note)=>note.title===title)
-    if(duplicateNotes.length===0){
+    const duplicateNote= notes.find((note)=>note.title===title)
+    if(!duplicateNote){
         notes.push({
             title:title,
             body:body
@@ -44,13 +44,13 @@ const listNotes=()=>{
 
 const readNote=(title)=>{
     const notes=loadNotes();
-    const notesToRead=notes.filter((note)=>note.title===title);
-    if(notesToRead.length<=0){
+    const noteToRead=notes.find((note)=>note.title===title);
+    if(!noteToRead){
         console.log(chalk.red.inverse('Note Title not exist...'));
     }else{
-        notesToRead.forEach((note)=>{
-            console.log(chalk.green.inverse('Note Title:') +note.title+'\t'+ chalk.green.inverse('Note Body:') +note.body+'\n');
-        })
+        // noteToRead.forEach((note)=>{
+            console.log(chalk.green.inverse('Note Title:') +noteToRead.title+'\t'+ chalk.green.inverse('Note Body:') +noteToRead.body+'\n');
+        // })
     }
 }
 
