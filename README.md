@@ -1,4 +1,5 @@
 ## Notes App
+============
 
 This is a Notes App created using NodeJS
 
@@ -11,7 +12,7 @@ Procedures:
 2. Install local packages: npm install
 3. Install global packages: npm install nodemon -g
 
-App features:
+App Features:
 =============
 1. Add note: node app add --title='title of your note' --body='description of your note'
 2. Remove note: node app remove --title='title of note to remove'
