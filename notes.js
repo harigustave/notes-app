@@ -42,6 +42,17 @@ const listNotes=()=>{
     }
 }
 
+const readNote=(title)=>{
+    const notes=loadNotes();
+    const notesToRead=notes.filter((note)=>note.title===title);
+    if(notesToRead.length<=0){
+        console.log(chalk.red.inverse('Note Title not exist...'));
+    }else{
+        notesToRead.forEach((note)=>{
+            console.log(chalk.green.inverse('Note Title:') +note.title+'\t'+ chalk.green.inverse('Note Body:') +note.body+'\n');
+        })
+    }
+}
 
 // Save notes as JSON to JSON file
 const saveNotes=(notes)=>{
@@ -64,6 +75,7 @@ module.exports={
     addNote:addNote,
     removeNote: removeNote,
     listNotes:listNotes,
+    readNote:readNote,
 }
 
 
