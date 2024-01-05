@@ -1,5 +1,5 @@
-## Notes App
-============
+Notes App
+=========
 
 This is a Notes App created using NodeJS
 
